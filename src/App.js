@@ -43,7 +43,7 @@ const App = () => {
   const [val, setVal] = React.useState({...initVal});
 
   React.useEffect(()=>{
-    axios.post('/api', {
+    axios.post('https://api.tushare.pro', {
       "api_name": "stock_basic",
       "token": val.apiToken,
     })
@@ -123,10 +123,10 @@ const App = () => {
         "fields": ""
       };
   
-      axios.post('/api', toPost)
+      axios.post('https://api.tushare.pro', toPost)
         .then(({data}) => {
           var tick = data
-          axios.post('/api', {...toPost, "api_name": "adj_factor"}).then(
+          axios.post('https://api.tushare.pro', {...toPost, "api_name": "adj_factor"}).then(
             ({data}) => {
               const recentAdj = parseFloat(data.data.items[0][2]);
               if (data.data.length == tick.data.length) {
