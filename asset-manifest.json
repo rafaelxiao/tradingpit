@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tradingpit/static/css/main.eeb0e56e.chunk.css",
-    "main.js": "/tradingpit/static/js/main.4c0c169f.chunk.js",
-    "main.js.map": "/tradingpit/static/js/main.4c0c169f.chunk.js.map",
+    "main.js": "/tradingpit/static/js/main.6e7be42f.chunk.js",
+    "main.js.map": "/tradingpit/static/js/main.6e7be42f.chunk.js.map",
     "runtime-main.js": "/tradingpit/static/js/runtime-main.09ef16bb.js",
     "runtime-main.js.map": "/tradingpit/static/js/runtime-main.09ef16bb.js.map",
     "static/css/2.786ae0dd.chunk.css": "/tradingpit/static/css/2.786ae0dd.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.786ae0dd.chunk.css",
     "static/js/2.a6caf055.chunk.js",
     "static/css/main.eeb0e56e.chunk.css",
-    "static/js/main.4c0c169f.chunk.js"
+    "static/js/main.6e7be42f.chunk.js"
   ]
 }
