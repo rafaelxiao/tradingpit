@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/tradingpit/static/css/main.eeb0e56e.chunk.css",
+    "main.js": "/tradingpit/static/js/main.4c0c169f.chunk.js",
+    "main.js.map": "/tradingpit/static/js/main.4c0c169f.chunk.js.map",
+    "runtime-main.js": "/tradingpit/static/js/runtime-main.09ef16bb.js",
+    "runtime-main.js.map": "/tradingpit/static/js/runtime-main.09ef16bb.js.map",
+    "static/css/2.786ae0dd.chunk.css": "/tradingpit/static/css/2.786ae0dd.chunk.css",
+    "static/js/2.a6caf055.chunk.js": "/tradingpit/static/js/2.a6caf055.chunk.js",
+    "static/js/2.a6caf055.chunk.js.map": "/tradingpit/static/js/2.a6caf055.chunk.js.map",
+    "static/js/3.29c7b585.chunk.js": "/tradingpit/static/js/3.29c7b585.chunk.js",
+    "static/js/3.29c7b585.chunk.js.map": "/tradingpit/static/js/3.29c7b585.chunk.js.map",
+    "index.html": "/tradingpit/index.html",
+    "static/css/2.786ae0dd.chunk.css.map": "/tradingpit/static/css/2.786ae0dd.chunk.css.map",
+    "static/css/main.eeb0e56e.chunk.css.map": "/tradingpit/static/css/main.eeb0e56e.chunk.css.map",
+    "static/js/2.a6caf055.chunk.js.LICENSE.txt": "/tradingpit/static/js/2.a6caf055.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09ef16bb.js",
+    "static/css/2.786ae0dd.chunk.css",
+    "static/js/2.a6caf055.chunk.js",
+    "static/css/main.eeb0e56e.chunk.css",
+    "static/js/main.4c0c169f.chunk.js"
+  ]
+}
