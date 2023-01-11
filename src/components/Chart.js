@@ -22,6 +22,7 @@ import React from 'react';
 import ReactECharts from 'echarts-for-react';
 
 import { InputNumber, Space, Switch } from 'antd';
+import useWindowSize from '../utils/useWindowSize';
 
 
 // 注册必须的组件
@@ -40,6 +41,8 @@ echarts.use([
 
 
 export default function Chart({ data, end, window, hasGraph, current, longTerm, shortTerm, handleAvg, handleLog, isLog, handleWindow }){
+
+    const { width } = useWindowSize();
 
     function calculateMA(dayCount, data) {
         var result = [];
@@ -278,7 +281,7 @@ export default function Chart({ data, end, window, hasGraph, current, longTerm, 
         }
 
         const fontStyle = {
-            fontSize: '12px',
+            fontSize: width > 900 ? '12px' : '8px',
         }
         
         return (
@@ -298,33 +301,42 @@ export default function Chart({ data, end, window, hasGraph, current, longTerm, 
                         // backgroundColor:'red'
                     }}
                 >
-                    <div style={{...fontStyle, marginRight: '2vh'}}><label>股票：<b>{data.title}</b></label></div>
+                    
+                    <div style={{
+                            display: 'flex', 
+                            flexDirection: width > 900 ? 'row' : 'column', 
+                            justifyContent: 'space-between', 
+                            alignItems: width > 900 ? 'center' : 'flex-start',
+                            width: width > 900 ? '60vw' : '100vw',
+                        }}>
+                        <div style={{...fontStyle, marginRight: '2vh'}}><label>股票：<b>{data.title}</b></label></div>
+                        <div>
+                            <label style={fontStyle}>短均线周期：</label>
+                            <InputNumber min={2} max={500} defaultValue={shortTerm} size="small" style={{width: '12vh'}} onChange={handleAvg.bind(null, 'short')}/>
+                        </div>
 
-                    <div>
-                        <label style={fontStyle}>短均线周期：</label>
-                        <InputNumber min={2} max={500} defaultValue={shortTerm} size="small" style={{width: '12vh'}} onChange={handleAvg.bind(null, 'short')}/>
-                    </div>
+                        <div>
+                            <label style={fontStyle}>长均线周期：</label>
+                            <InputNumber min={5} max={1000} defaultValue={longTerm} size="small" style={{width: '12vh'}} onChange={handleAvg.bind(null, 'long')}/>
+                        </div>
 
-                    <div>
-                        <label style={fontStyle}>长均线周期：</label>
-                        <InputNumber min={5} max={1000} defaultValue={longTerm} size="small" style={{width: '12vh'}} onChange={handleAvg.bind(null, 'long')}/>
-                    </div>
+                        <div>
+                            <label style={fontStyle}>显示周期: </label>
+                            <InputNumber min={30} max={500} defaultValue={window} size="small" style={{width: '12vh'}} onChange={handleWindow}/>
+                        </div>
 
-                    <div>
-                        <label style={fontStyle}>显示周期: </label>
-                        <InputNumber min={30} max={500} defaultValue={window} size="small" style={{width: '12vh'}} onChange={handleWindow}/>
+                        <div>
+                            <label style={{...fontStyle, marginRight: '1vh'}}>对数坐标轴</label>
+                            <Switch onChange={handleLog}/>
+                        </div>
                     </div>
-
-                    <div>
-                        <label style={{...fontStyle, marginRight: '1vh'}}>对数坐标轴</label>
-                        <Switch onChange={handleLog}/>
-                    </div>
+                    
 
                 </Space>
                 <ReactECharts 
                     option={set_option(filteredData)}
                     style={{
-                        height: '32vw',
+                        height: width > 900 ? '32vw' : '500px',
                         paddingTop: '0',
                         marginTop: '0',
                     }}

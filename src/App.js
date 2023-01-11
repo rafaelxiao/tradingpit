@@ -9,11 +9,29 @@ import Panel from './components/Panel';
 import Result from './components/Result';
 import Cards from './components/Cards';
 
+// function enc(code) {
+//   var c=String.fromCharCode(code.charCodeAt(0)+code.length);
+//   for(var i=1;i<code.length;i++){
+//       c+=String.fromCharCode(code.charCodeAt(i)+code.charCodeAt(i-1));
+//   }
+//   return(escape(c));
+// }
+
+function dec(code) {
+  code=unescape(code);
+  var c=String.fromCharCode(code.charCodeAt(0)-code.length);
+  for(var i=1;i<code.length;i++){
+      c+=String.fromCharCode(code.charCodeAt(i)-c.charCodeAt(i-1));
+  }
+  return c;
+}
+
+
 const App = () => {
 
   const initVal = {
     minDuration: 300,
-    apiToken: "35af6d2ab71cbe2acff916f8344a00c2ba056d9e819bf75746f09737",
+    apiToken: dec('kh%96%C7%9C%9A%96%93%C3%99h%94%C5%C7%97%93%C4%C9%CC%9Fjg%9C%9Ekgh%95%91%60%93%95%94%C3%91ek%9A%9D%9E%9Dij%9B%C8%9Dllkj%9C%96ipjj'),
     ticks: {},
     window: 60,
     current: 60,
